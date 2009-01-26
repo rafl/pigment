@@ -8,7 +8,7 @@ my $viewport = Pigment::ViewportFactory->make('opengl');
 $viewport->set_title('Text');
 
 my $txt = Pigment::Text->new;
-$txt->set_markup(<<'EOM')
+$txt->set_markup(<<'EOM');
 <b>PgmText</b> is a drawable displaying a <u>text</u> with support for
 multiple lines, <i><b>markups</b> and several</i> properties.
 EOM
@@ -16,8 +16,8 @@ EOM
 $txt->set_font_height(0.12);
 $txt->set_size(1, 1);
 $txt->set_position(1.5, 1, 0);
-$txt->fg_color(240, 240, 240, 255);
-$txt->bg_color(20, 20, 20, 255);
+$txt->set_fg_color(240, 240, 240, 255);
+$txt->set_bg_color(20, 20, 20, 255);
 $txt->show;
 
 my $canvas = Pigment::Canvas->new;
