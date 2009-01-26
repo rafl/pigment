@@ -1,6 +1,7 @@
 #include <gtk2perl.h>
 #include <gst2perl.h>
 #include <pgm/pgm.h>
+#include <pgm/imaging/pgmimaging.h>
 #include "pigment-autogen.h"
 
 #define PERL_PIGMENT_ASSERT_ERROR(error) \
