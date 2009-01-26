@@ -1,0 +1,2 @@
+PGM_TYPE_VIEWPORT          PgmViewport         GObject  Pigment::Viewport
+PGM_TYPE_VIEWPORT_FACTORY  PgmViewportFactory  GObject  Pigment::ViewportFactory
