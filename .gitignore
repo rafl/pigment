@@ -1,6 +1,7 @@
 .*
 !.gitignore
 *.c
+!perl_pigment.c
 *.o
 Makefile*
 !Makefile.PL

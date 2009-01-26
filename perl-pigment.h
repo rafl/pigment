@@ -6,3 +6,5 @@
 	if (error != PGM_ERROR_OK) { \
 		croak ("Generic pigment error"); \
 	}
+
+GPerlBoxedWrapperClass *perl_pigment_get_element_wrapper_class (void);

@@ -35,6 +35,7 @@ sub pigment {
     $pigment->set_inc($pkgconfig{cflags});
     $pigment->set_libs($pkgconfig{libs});
     $pigment->add_xs(@xs_files);
+    $pigment->add_c('perl_pigment.c');
     $pigment->add_pm('lib/Pigment.pm' => '$(INST_LIBDIR)/Pigment.pm');
     $pigment->add_typemaps(rel2abs(catfile(qw/build pigment.typemap/)));
     $pigment->install(catfile(qw/build pigment-autogen.h/));
