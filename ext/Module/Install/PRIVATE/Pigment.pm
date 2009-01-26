@@ -16,14 +16,19 @@ sub pigment {
 
     mkdir 'build';
 
-    my %pkgconfig;
-    eval {
-        %pkgconfig = ExtUtils::PkgConfig->find('pigment-0.3');
-    };
+    my %pkgconfig = (cflags => q{}, libs => q{});
+    for my $pkg (qw/pigment-gtk-0.3 pigment-imaging-0.3/) {
+        my %pkg;
+        eval {
+            %pkg = ExtUtils::PkgConfig->find($pkg);
+        };
 
-    if (my $error = $@) {
-        print STDERR $error;
-        return;
+        if (my $error = $@) {
+            print STDERR $error;
+            return;
+        }
+
+        $pkgconfig{$_} .= q{ } . $pkg{$_} for qw/cflags libs/;
     }
 
     Glib::CodeGen->add_type_handler(
