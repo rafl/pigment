@@ -62,7 +62,7 @@ gperl_register_boxed ($typemacro, \"$package\", perl_pigment_get_element_wrapper
 
     our @xs_files = <xs/*.xs>;
 
-    our $pigment = ExtUtils::Depends->new('Pigment', 'Gtk2');
+    our $pigment = ExtUtils::Depends->new('Pigment', 'Gtk2', 'GStreamer');
     $pigment->set_inc($pkgconfig{cflags});
     $pigment->set_libs($pkgconfig{libs});
     $pigment->add_xs(@xs_files);

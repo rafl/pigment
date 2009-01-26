@@ -5,6 +5,7 @@ package Pigment;
 
 use parent qw/DynaLoader/;
 use Gtk2;
+use GStreamer;
 
 our $VERSION = '0.01';
 
