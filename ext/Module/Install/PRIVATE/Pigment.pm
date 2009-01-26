@@ -26,6 +26,37 @@ sub pigment {
         return;
     }
 
+    Glib::CodeGen->add_type_handler(
+        PgmEvent => sub {
+            my ($typemacro, $classname, $base, $package) = @_;
+	        Glib::CodeGen::add_header "#ifdef $typemacro
+  /* GBoxed $classname */
+  typedef $classname $classname\_ornull;
+# define Sv$classname(sv)	(($classname *) gperl_get_boxed_check ((sv), $typemacro))
+# define Sv$classname\_ornull(sv)	(gperl_sv_is_defined (sv) ? Sv$classname (sv) : NULL)
+  typedef $classname $classname\_own;
+  typedef $classname $classname\_copy;
+  typedef $classname $classname\_own_ornull;
+# define newSV$classname(val)	(gperl_new_boxed ((gpointer) (val), $typemacro, FALSE))
+# define newSV$classname\_ornull(val)	((val) ? newSV$classname(val) : &PL_sv_undef)
+# define newSV$classname\_own(val)	(gperl_new_boxed ((gpointer) (val), $typemacro, TRUE))
+# define newSV$classname\_copy(val)	(gperl_new_boxed_copy ((gpointer) (val), $typemacro))
+# define newSV$classname\_own_ornull(val)	((val) ? newSV$classname\_own(val) : &PL_sv_undef)
+#endif /* $typemacro */
+";
+            Glib::CodeGen::add_typemap "$classname *", "T_GPERL_GENERIC_WRAPPER";
+	        Glib::CodeGen::add_typemap "const $classname *", "T_GPERL_GENERIC_WRAPPER";
+	        Glib::CodeGen::add_typemap "$classname\_ornull *", "T_GPERL_GENERIC_WRAPPER";
+	        Glib::CodeGen::add_typemap "const $classname\_ornull *", "T_GPERL_GENERIC_WRAPPER";
+	        Glib::CodeGen::add_typemap "$classname\_own *", "T_GPERL_GENERIC_WRAPPER";
+	        Glib::CodeGen::add_typemap "$classname\_copy *", "T_GPERL_GENERIC_WRAPPER";
+	        Glib::CodeGen::add_typemap "$classname\_own_ornull *", "T_GPERL_GENERIC_WRAPPER";
+	        Glib::CodeGen::add_register "#ifdef $typemacro
+gperl_register_boxed ($typemacro, \"$package\", perl_pigment_get_element_wrapper_class ());
+#endif /* $typemacro */";
+        },
+    );
+
     Gtk2::CodeGen->parse_maps('pigment');
     Gtk2::CodeGen->write_boot(ignore => qr/^Pigment$/);
 
