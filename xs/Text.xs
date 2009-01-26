@@ -3,7 +3,9 @@
 MODULE = Pigment::Text  PACKAGE = Pigment::Text  PREFIX = pgm_text_
 
 PgmDrawable *
-pgm_text_new (const gchar *markup=NULL)
+pgm_text_new (class, const gchar *markup=NULL)
+	C_ARGS:
+		markup
 
 NO_OUTPUT PgmError
 pgm_text_set_label (PgmText *text, const gchar *label)
