@@ -7,8 +7,7 @@ use Pigment;
 my $viewport = Pigment::ViewportFactory->make('opengl');
 $viewport->set_title('Text');
 
-my $txt = Pigment::Text->new;
-$txt->set_markup(<<'EOM');
+my $txt = Pigment::Text->new(<<'EOM');
 <b>PgmText</b> is a drawable displaying a <u>text</u> with support for
 multiple lines, <i><b>markups</b> and several</i> properties.
 EOM
