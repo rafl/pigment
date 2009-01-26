@@ -5,3 +5,13 @@ PGM_TYPE_EVENT                PgmEvent               GObject  Pigment::Event
 PGM_TYPE_CANVAS               PgmCanvas              GObject  Pigment::Canvas
 PGM_TYPE_VIEWPORT_ROTATION    PgmViewportRotation    GEnum    Pigment::ViewportRotation
 PGM_TYPE_VIEWPORT_REFLECTION  PgmViewportReflection  GEnum    Pigment::Viewport::Rotation
+PGM_TYPE_DRAWABLE             PgmDrawable            GObject  Pigment::Drawable
+PGM_TYPE_TEXT                 PgmText                GObject  Pigment::Text
+PGM_TYPE_TEXT_ELLIPSIZE       PgmTextEllipsize       GEnum    Pigment::TextEllipsize
+PGM_TYPE_TEXT_ALIGNMENT       PgmTextAlignment       GEnum    Pigment::TextAlignment
+PGM_TYPE_TEXT_WRAP            PgmTextWrap            GEnum    Pigment::TextWrap
+PGM_TYPE_TEXT_GRAVITY         PgmTextGravity         GEnum    Pigment::TextGravity
+PGM_TYPE_TEXT_STRETCH         PgmTextStretch         GEnum    Pigment::TextStretch
+PGM_TYPE_TEXT_STYLE           PgmTextStyle           GEnum    Pigment::TextStyle
+PGM_TYPE_TEXT_VARIANT         PgmTextVariant         GEnum    Pigment::TextVariant
+PGM_TYPE_TEXT_WEIGHT          PgmTextWeight          GEnum    Pigment::TextWeight
