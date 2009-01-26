@@ -38,7 +38,8 @@ event_subclass_from_event (PgmEvent *event) {
             return "State";
             break;
         case PGM_DELETE:
-            croak ("pgm delete event not bound yet");
+            return "Delete";
+            break;
         case PGM_WIN32_MESSAGE:
             return "Win32Message";
             break;

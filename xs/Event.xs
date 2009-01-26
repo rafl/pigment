@@ -265,6 +265,11 @@ changed_mask (PgmEvent *event)
 BOOT:
 	gperl_prepend_isa ("Pigment::Event::State", "Pigment::Event");
 
+MODULE = Pigment::Event  PACKAGE = Pigment::Event::Delete
+
+BOOT:
+	gperl_prepend_isa ("Pigment::Event::Delete", "Pigment::Event");
+
 MODULE = Pigment::Event  PACKAGE = Pigment::Event::Win32Message
 
 guint32
