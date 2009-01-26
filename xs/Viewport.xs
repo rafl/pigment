@@ -192,7 +192,9 @@ pgm_viewport_get_embedding_id (PgmViewport *viewport, OUTLIST gulong embedding_i
 		PERL_PIGMENT_ASSERT_ERROR (RETVAL);
 
 NO_OUTPUT PgmError
-pgm_viewport_get_pixel_formats (PgmViewport *viewport, OUTLIST gulong formats_mask)
+pgm_viewport_get_pixel_formats (PgmViewport *viewport, OUTLIST PgmImagePixelFormat formats_mask)
+    C_ARGS:
+        viewport, (gulong *)&formats_mask
 	POSTCALL:
 		PERL_PIGMENT_ASSERT_ERROR (RETVAL);
 
