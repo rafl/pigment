@@ -17,13 +17,13 @@ PGM_TYPE_TEXT_STYLE             PgmTextStyle           GEnum     Pigment::TextSt
 PGM_TYPE_TEXT_VARIANT           PgmTextVariant         GEnum     Pigment::TextVariant
 PGM_TYPE_TEXT_WEIGHT            PgmTextWeight          GEnum     Pigment::TextWeight
 PGM_TYPE_DRAWABLE_LAYER         PgmDrawableLayer       GEnum     Pigment::DrawableLayer
-PGM_TYPE_BUTTON_TYPE            PgmButtonType          GEnum     Pigment::ButtonType
+PGM_TYPE_BUTTON_TYPE            PgmButtonType          GFlags    Pigment::ButtonType
 PGM_TYPE_SCROLL_DIRECTION       PgmScrollDirection     GEnum     Pigment::ScrollDirection
-PGM_TYPE_VIEWPORT_STATE         PgmViewportState       GEnum     Pigment::ViewportState
+PGM_TYPE_VIEWPORT_STATE         PgmViewportState       GFlags    Pigment::ViewportState
 PGM_TYPE_IMAGE                  PgmImage               GObject   Pigment::Image
-PGM_TYPE_IMAGE_PIXEL_FORMAT     PgmImagePixelFormat    GEnum     Pigment::ImageFormat
+PGM_TYPE_IMAGE_PIXEL_FORMAT     PgmImagePixelFormat    GFlags    Pigment::ImageFormat
 PGM_TYPE_IMAGE_STORAGE_TYPE     PgmImageStorageType    GEnum     Pigment::ImageStorageType
-PGM_TYPE_IMAGE_ALIGNMENT        PgmImageAlignment      GEnum     Pigment::ImageAlignment
+PGM_TYPE_IMAGE_ALIGNMENT        PgmImageAlignment      GFlags     Pigment::ImageAlignment
 PGM_TYPE_IMAGE_LAYOUT_TYPE      PgmImageLayoutType     GEnum     Pigment::ImageLayoutType
 PGM_TYPE_IMAGE_INTERP_TYPE      PgmImageInterpType     GEnum     Pigment::ImageInterpType
 PGM_TYPE_IMAGE_WRAPPING         PgmImageWrapping       GEnum     Pigment::ImageWrapping
