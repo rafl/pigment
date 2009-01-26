@@ -151,6 +151,18 @@ keyval (PgmEvent *event)
 	OUTPUT:
 		RETVAL
 
+gchar *
+char (PgmEvent *event)
+	PREINIT:
+		STRLEN len;
+		gchar buffer[7];
+	CODE:
+		len = g_unichar_to_utf8 (pgm_keyval_to_unicode (event->key.keyval), buffer);
+		buffer[len] = '\0';
+		RETVAL = buffer;
+	OUTPUT:
+		RETVAL
+
 guint16
 hardware_keycode (PgmEvent *event)
 	CODE:
