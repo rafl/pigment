@@ -80,9 +80,16 @@ gperl_register_boxed ($typemacro, \"$package\", perl_pigment_get_element_wrapper
     $self->makemaker_args(
         $pigment->get_makefile_vars,
         XSPROTOARG => '-noprototypes',
+        MAN3PODS => { Glib::MakeHelper->do_pod_files(@xs_files) },
     );
 
-    $self->postamble(Glib::MakeHelper->postamble_clean);
+    $self->postamble(
+        Glib::MakeHelper->postamble_clean
+      . Glib::MakeHelper->postamble_docs_full(
+          DEPENDS => $pigment, XS_FILES => \@xs_files,
+          COPYRIGHT => 'Copyright (c) 2009  Florian Ragwitz'
+        )
+    );
 
     return 1;
 }
