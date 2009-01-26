@@ -28,6 +28,11 @@ $viewport->signal_connect('delete-event' => sub {
     Pigment->main_quit;
 });
 
+$viewport->signal_connect('key-press-event' => sub {
+    my ($vp, $event) = @_;
+    printf("keyval:0x%x\n", $event->keyval);
+});
+
 $viewport->show;
 
 Pigment->main;
