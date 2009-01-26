@@ -62,3 +62,7 @@ pgm_main_iteration_do (class, blocking)
 		gboolean blocking
 	C_ARGS:
 		blocking
+
+BOOT:
+#include "boot.xsh"
+#include "register.xsh"
