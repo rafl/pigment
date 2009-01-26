@@ -17,3 +17,6 @@ PGM_TYPE_TEXT_STYLE           PgmTextStyle           GEnum    Pigment::TextStyle
 PGM_TYPE_TEXT_VARIANT         PgmTextVariant         GEnum    Pigment::TextVariant
 PGM_TYPE_TEXT_WEIGHT          PgmTextWeight          GEnum    Pigment::TextWeight
 PGM_TYPE_DRAWABLE_LAYER       PgmDrawableLayer       GEnum    Pigment::DrawableLayer
+PGM_TYPE_BUTTON_TYPE          PgmButtonType          GEnum    Pigment::ButtonType
+PGM_TYPE_SCROLL_DIRECTION     PgmScrollDirection     GEnum    Pigment::ScrollDirection
+PGM_TYPE_VIEWPORT_STATE       PgmViewportState       GEnum    Pigment::ViewportState
