@@ -4,9 +4,7 @@ use 5.010;
 use strict;
 use warnings;
 use Pigment;
-use Glib qw/TRUE FALSE/;
 use FindBin qw/$Bin/;
-use List::MoreUtils qw/pairwise/;
 use File::Spec::Functions qw/catfile/;
 
 my $viewport = Pigment::ViewportFactory->make('opengl');
@@ -44,7 +42,7 @@ my @rotate = (0) x 3;
 $viewport->signal_connect('key-press-event' => sub {
     my ($vp, $event) = @_;
 
-    state $fullscreen = FALSE;
+    state $fullscreen = 0;
 
     given ($event->char) {
         when ('q') {
