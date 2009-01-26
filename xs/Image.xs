@@ -7,7 +7,7 @@ pgm_image_new (class)
 	C_ARGS:
 
 PgmDrawable *
-pgm_image_new_from_file (class, const gchar *filename, guint max_size)
+pgm_image_new_from_file (class, const gchar *filename, guint max_size=0)
 	C_ARGS:
 		filename, max_size
 
