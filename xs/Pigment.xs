@@ -3,6 +3,19 @@
 MODULE = Pigment  PACKAGE = Pigment  PREFIX = pgm_
 
 void
+pgm_init (class)
+	PREINIT:
+		GPerlArgv *perl_argv;
+	INIT:
+		perl_argv = gperl_argv_new ();
+	C_ARGS:
+		&perl_argv->argc, &perl_argv->argv
+	POSTCALL:
+		gperl_argv_update (perl_argv);
+	CLEANUP:
+		gperl_argv_free (perl_argv);
+
+void
 pgm_deinit (class)
 	C_ARGS:
 
