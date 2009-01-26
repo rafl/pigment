@@ -29,3 +29,4 @@ PGM_TYPE_IMAGE_INTERP_TYPE      PgmImageInterpType     GEnum     Pigment::ImageI
 PGM_TYPE_IMAGE_WRAPPING         PgmImageWrapping       GEnum     Pigment::ImageWrapping
 PGM_TYPE_IMAGE_SINK             PgmImageSink           GObject   Pigment::ImageSink
 PGM_TYPE_IMAGE_SINK_EVENT_MASK  PgmImageSinkEventMask  GFlags    Pigment::ImageSinkEventMask
+PGM_TYPE_GTK                    PgmGtk                 GObject   Pigment::Gtk2
