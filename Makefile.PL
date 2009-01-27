@@ -4,6 +4,7 @@ use lib 'ext';
 use inc::Module::Install;
 
 name 'Pigment';
+license 'lgpl';
 all_from 'lib/Pigment.pm';
 
 pigment or exit;
