@@ -119,6 +119,12 @@ Pigment library's website.
 
 =back
 
+=head1 LICENSE
+
+This is free software, licensed under:
+
+  The GNU Lesser General Public License, Version 2.1, February 1999
+
 =head1 AUTHOR
 
 Florian Ragwitz E<lt>rafl@debian.orgE<gt>
