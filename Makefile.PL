@@ -18,4 +18,6 @@ configure_requires 'ExtUtils::PkgConfig';
 
 no_index directory => qw/ext/;
 
+extra_tests;
+
 WriteAll;
